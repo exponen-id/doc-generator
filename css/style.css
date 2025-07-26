@@ -1,0 +1,344 @@
+/* Google Fonts Import (sudah ada di HTML, ini hanya untuk referensi) */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;600;700&display=swap'); */
+
+:root {
+    --deep-ocean: #003366;
+    --limitless-sky: #00AEEF;
+    --sunrise-gold: #FFC700;
+    --deep-charcoal: #333333;
+    --calm-gray: #F4F7F9;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--calm-gray);
+    color: var(--deep-charcoal);
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styling untuk view yang aktif dan tidak aktif */
+.view { 
+    display: none; 
+}
+.view.active { 
+    display: block; 
+}
+
+/* Styling untuk form inputs */
+input, select, textarea {
+    border-color: #D1D5DB;
+}
+input:focus, select:focus, textarea:focus {
+    --tw-ring-color: var(--limitless-sky);
+    border-color: var(--limitless-sky);
+}
+
+/* Styling untuk tombol navigasi dokumen */
+.doc-nav-btn.active {
+    background-color: var(--deep-ocean);
+    color: white;
+    font-weight: 700;
+}
+.doc-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #e5e7eb;
+    color: #9ca3af;
+}
+
+/* --- Area Cetak & Pratinjau --- */
+
+#print-area-container {
+    transform-origin: top center;
+    transition: transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 100%;
+}
+
+#print-area {
+    font-family: 'Lato', sans-serif;
+    position: relative; 
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 29.7cm; /* Maintain a page-like feel */
+}
+
+/* --- Styling Khusus untuk Pratinjau Dokumen --- */
+.document-wrapper {
+    padding: 2rem;
+    font-size: 10pt;
+    color: var(--deep-charcoal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+}
+.company-info {
+    text-align: left;
+}
+.company-logo {
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+.company-details {
+    font-size: 0.65rem;
+    line-height: 1.4;
+}
+.document-title {
+    text-align: right;
+}
+.document-body {
+    flex-grow: 1;
+    margin-top: 1.5rem;
+}
+.document-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    font-size: 0.75rem;
+}
+.doc-details {
+    text-align: right;
+}
+.meta-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+.items-table {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    border-collapse: collapse;
+}
+.items-table th, .items-table td {
+    border: 1px solid #e5e7eb;
+    padding: 0.35rem 0.5rem;
+}
+.items-table thead {
+    background-color: var(--calm-gray);
+}
+.summary-section {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.terbilang-section {
+    width: 55%;
+}
+.terbilang-text {
+    font-style: italic;
+    background-color: var(--calm-gray);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+.totals-section {
+    width: 40%;
+    font-size: 0.875rem;
+}
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 0;
+}
+.grand-total {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ccc;
+}
+.final-total {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid black;
+}
+.terms-section {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.terms-full {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+}
+.signature-area {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+.signature-area.grid-cols-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.signature-box {
+    /* Container for each signature block */
+}
+.signature-space {
+    height: 4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.stamp {
+    height: 100%;
+    opacity: 0.2;
+    position: absolute;
+}
+.meterai-label {
+    position: absolute;
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #0056a3;
+    border: 1px solid #0056a3;
+    padding: 0.25rem;
+    line-height: 1;
+    opacity: 0.8;
+}
+.signature-name {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 0.25rem;
+}
+.document-footer {
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    border-top: 2px solid black;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+.payment-section {
+    font-size: 0.7rem;
+}
+.meterai-box {
+    border: 2px dashed #9ca3af;
+    width: 110px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.1;
+}
+
+/* Kwitansi Specific Styles */
+.kwitansi-box {
+    border: 1px solid black;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+.kwitansi-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+.kwitansi-label {
+    width: 25%;
+    flex-shrink: 0;
+}
+.kwitansi-value {
+    width: 75%;
+}
+.terbilang-kwitansi {
+    font-style: italic;
+    background-color: #e5e7eb;
+    padding: 0.5rem;
+}
+.kwitansi-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.kwitansi-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+}
+
+/* **PENAMBAHAN**: Styling Khusus untuk Faktur Pajak */
+.faktur-pajak-wrapper {
+    border: 2px solid black;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+.fp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.5rem;
+}
+.fp-code-title {
+    border: 1px solid black;
+    padding: 0.5rem;
+    text-align: center;
+}
+.fp-nsfp {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+.fp-main-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    align-self: center;
+}
+.fp-section {
+    border: 1px solid black;
+    border-top: none;
+    padding: 0.5rem;
+}
+.fp-section-title {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+.fp-table-meta {
+    width: 100%;
+    font-size: 0.75rem;
+}
+.items-table.fp-items-table {
+    border: 1px solid black;
+}
+.items-table.fp-items-table tfoot td {
+    border-top: 1px solid black;
+}
+
+
+/* --- Aturan Cetak (Print Rules) --- */
+@media print {
+    .no-print, #dashboard-view, #editor-view > .flex.justify-between { display: none !important; }
+    body { background-color: white; margin: 0; padding: 0; }
+    .container { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+    #editor-view .grid { display: block !important; }
+    #print-area-container { transform: scale(1) !important; }
+    #print-area { box-shadow: none !important; width: 100%; height: 100%; padding: 0; box-sizing: border-box; aspect-ratio: auto; min-height: 0; }
+    .document-wrapper { padding: 10mm 15mm; }
+    .signature-area { display: grid !important; page-break-inside: avoid; }
+}
